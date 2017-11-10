@@ -1,3 +1,30 @@
-<p>
-  home works!
-</p>
+<mat-toolbar color="primary">
+  <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+  <span>Save On</span>
+  <span class="spacer"></span>
+  <mat-icon class="icon-header">notifications</mat-icon>
+  <mat-icon class="icon-header">settings</mat-icon>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav class="sidenav-content" #sidenav mode="side" opened="false">
+    <mat-nav-list>
+      <mat-list-item>
+        <a mat-line>
+          <span>Dashboard</span></a>
+        <i class="material-icons mat-light">home</i>
+      </mat-list-item>
+      <mat-list-item>
+        <a mat-line>
+          <span>Saving</span></a>
+        <i class="material-icons mat-light">save</i>
+      </mat-list-item>
+      <mat-list-item>
+        <a mat-line>
+          <span>Income</span></a>
+        <i class="material-icons mat-light">work</i>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <div class="main-content">
+  </div>
+</mat-sidenav-container>
