@@ -41,6 +41,10 @@ import { MatAutocompleteModule,
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { HttpModule } from '@angular/http';
+import { AngularFireModule } from "angularfire2";
+import { AngularFireDatabaseModule } from "angularfire2/database";
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from "../environments/environment";
 
 @NgModule({
   exports: [
@@ -91,7 +95,10 @@ export class MaterialModule {}
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   providers: [
     LoginService

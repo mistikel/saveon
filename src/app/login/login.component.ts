@@ -24,4 +24,8 @@ export class LoginComponent implements OnInit {
    );
   }
 
+  signInWithTwitter(){
+    this.loginService.signInWithTwitter();
+  }
+
 }
