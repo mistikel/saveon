@@ -1,9 +1,11 @@
+import { LoginService } from './service/login.service';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import 'hammerjs';
 import { CdkTableModule } from '@angular/cdk/table';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule,
   MatButtonModule,
   MatButtonToggleModule,
@@ -38,6 +40,7 @@ import { MatAutocompleteModule,
 } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   exports: [
@@ -85,9 +88,14 @@ export class MaterialModule {}
   imports: [
     MaterialModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
